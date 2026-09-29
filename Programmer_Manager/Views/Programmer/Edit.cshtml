@@ -1,0 +1,50 @@
+﻿@model Programmer_Manager.ViewModels.Programmer.ProgrammerEditViewModel
+
+<h1>Edit programmer</h1>
+
+<form asp-action="Edit" method="post">
+
+    <input asp-for="Id" type="hidden" />
+
+    <label>Name:</label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+
+    <br />
+    <br />
+
+    <label>Address:</label>
+    <input asp-for="Address" />
+    <span asp-validation-for="Address"></span>
+
+    <br />
+    <br />
+
+    <label>Email:</label>
+    <input asp-for="Email" />
+    <span asp-validation-for="Email"></span>
+
+    <br />
+    <br />
+
+    <label>Phone:</label>
+    <input asp-for="PhoneNumber" />
+    <span asp-validation-for="PhoneNumber"></span>
+
+    <br />
+    <br />
+
+    <label>Years of experience:</label>
+    <input asp-for="YearsOfExperience" />
+    <span asp-validation-for="YearsOfExperience"></span>
+
+    <br />
+    <br />
+
+    <button type="submit">Save changes</button>
+
+</form>
+
+<br />
+
+<a asp-action="Index">Back to list</a>

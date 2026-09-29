@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Programmer_Manager.ViewModels.Program.ProgramIndexViewModel>
+
+@{
+    ViewData["Title"] = "Programs";
+}
+
+<h1>Programs</h1>
+
+<p>
+    <a asp-action="Create">Create New Program</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProgrammingLanguage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Version)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProgrammerName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var program in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => program.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => program.ProgrammingLanguage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => program.Version)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => program.ProgrammerName)
+                </td>
+                <td>
+                    <a asp-action="Edit"
+                       asp-route-id="@program.Id">
+                        Edit
+                    </a>
+                    |
+                    <a asp-action="Details"
+                       asp-route-id="@program.Id">
+                        Details
+                    </a>
+                    |
+                    <a asp-action="Delete"
+                       asp-route-id="@program.Id">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
